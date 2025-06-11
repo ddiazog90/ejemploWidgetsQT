@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/add">
+        <file>img/salvado.png</file>
+    </qresource>
+    <qresource prefix="/update">
+        <file>img/editar.png</file>
+    </qresource>
+    <qresource prefix="/delete">
+        <file>img/eliminar.png</file>
+    </qresource>
+    <qresource prefix="/libros">
+        <file>img/libros.jpg</file>
+    </qresource>
+</RCC>
