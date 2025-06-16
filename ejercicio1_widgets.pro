@@ -10,9 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    sources/biblioteca.cpp \
+    sources/libro.cpp \
     viewmain.cpp
 
 HEADERS += \
+    headers/biblioteca.h \
+    headers/libro.h \
     viewmain.h
 
 FORMS += \

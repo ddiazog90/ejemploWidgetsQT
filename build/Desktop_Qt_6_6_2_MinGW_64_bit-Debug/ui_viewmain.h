@@ -50,14 +50,15 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_3;
     QSpinBox *sp_ejemplar;
-    QWidget *verticalLayoutWidget;
+    QLabel *label_8;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_3;
     QVBoxLayout *verticalLayout;
     QLabel *label_6;
     QCheckBox *cb_ciencias;
     QCheckBox *cb_tecnologia;
     QCheckBox *cb_medicina;
     QCheckBox *cb_social;
-    QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_7;
     QRadioButton *rb_editorial1;
@@ -65,13 +66,12 @@ public:
     QHBoxLayout *horizontalLayout_9;
     QRadioButton *rb_editorial3;
     QLineEdit *txt_otro;
-    QLabel *label_8;
 
     void setupUi(QWidget *viewMain)
     {
         if (viewMain->objectName().isEmpty())
             viewMain->setObjectName("viewMain");
-        viewMain->resize(806, 257);
+        viewMain->resize(806, 293);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -277,66 +277,69 @@ public:
 
         gridLayout->addLayout(horizontalLayout_5, 3, 0, 1, 1);
 
-        verticalLayoutWidget = new QWidget(viewMain);
-        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(330, 10, 211, 101));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        label_8 = new QLabel(viewMain);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(550, 10, 221, 221));
+        label_8->setPixmap(QPixmap(QString::fromUtf8(":/libros/img/libros.jpg")));
+        label_8->setScaledContents(true);
+        verticalLayoutWidget_3 = new QWidget(viewMain);
+        verticalLayoutWidget_3->setObjectName("verticalLayoutWidget_3");
+        verticalLayoutWidget_3->setGeometry(QRect(330, 10, 211, 271));
+        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(verticalLayoutWidget);
+        label_6 = new QLabel(verticalLayoutWidget_3);
         label_6->setObjectName("label_6");
 
         verticalLayout->addWidget(label_6);
 
-        cb_ciencias = new QCheckBox(verticalLayoutWidget);
+        cb_ciencias = new QCheckBox(verticalLayoutWidget_3);
         cb_ciencias->setObjectName("cb_ciencias");
 
         verticalLayout->addWidget(cb_ciencias);
 
-        cb_tecnologia = new QCheckBox(verticalLayoutWidget);
+        cb_tecnologia = new QCheckBox(verticalLayoutWidget_3);
         cb_tecnologia->setObjectName("cb_tecnologia");
 
         verticalLayout->addWidget(cb_tecnologia);
 
-        cb_medicina = new QCheckBox(verticalLayoutWidget);
+        cb_medicina = new QCheckBox(verticalLayoutWidget_3);
         cb_medicina->setObjectName("cb_medicina");
 
         verticalLayout->addWidget(cb_medicina);
 
-        cb_social = new QCheckBox(verticalLayoutWidget);
+        cb_social = new QCheckBox(verticalLayoutWidget_3);
         cb_social->setObjectName("cb_social");
 
         verticalLayout->addWidget(cb_social);
 
-        verticalLayoutWidget_2 = new QWidget(viewMain);
-        verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
-        verticalLayoutWidget_2->setGeometry(QRect(330, 110, 211, 119));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
+        verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_7 = new QLabel(verticalLayoutWidget_2);
+        label_7 = new QLabel(verticalLayoutWidget_3);
         label_7->setObjectName("label_7");
 
         verticalLayout_2->addWidget(label_7);
 
-        rb_editorial1 = new QRadioButton(verticalLayoutWidget_2);
+        rb_editorial1 = new QRadioButton(verticalLayoutWidget_3);
         rb_editorial1->setObjectName("rb_editorial1");
 
         verticalLayout_2->addWidget(rb_editorial1);
 
-        rb_editorial2 = new QRadioButton(verticalLayoutWidget_2);
+        rb_editorial2 = new QRadioButton(verticalLayoutWidget_3);
         rb_editorial2->setObjectName("rb_editorial2");
 
         verticalLayout_2->addWidget(rb_editorial2);
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
-        rb_editorial3 = new QRadioButton(verticalLayoutWidget_2);
+        rb_editorial3 = new QRadioButton(verticalLayoutWidget_3);
         rb_editorial3->setObjectName("rb_editorial3");
 
         horizontalLayout_9->addWidget(rb_editorial3);
 
-        txt_otro = new QLineEdit(verticalLayoutWidget_2);
+        txt_otro = new QLineEdit(verticalLayoutWidget_3);
         txt_otro->setObjectName("txt_otro");
 
         horizontalLayout_9->addWidget(txt_otro);
@@ -344,11 +347,12 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_9);
 
-        label_8 = new QLabel(viewMain);
-        label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(550, 10, 221, 221));
-        label_8->setPixmap(QPixmap(QString::fromUtf8(":/libros/img/libros.jpg")));
-        label_8->setScaledContents(true);
+
+        verticalLayout->addLayout(verticalLayout_2);
+
+
+        verticalLayout_3->addLayout(verticalLayout);
+
 
         retranslateUi(viewMain);
 
@@ -366,6 +370,7 @@ public:
         label_2->setText(QCoreApplication::translate("viewMain", "ISBN:", nullptr));
         label_5->setText(QCoreApplication::translate("viewMain", "AUTOR:", nullptr));
         label_3->setText(QCoreApplication::translate("viewMain", "EJEMPLARES:", nullptr));
+        label_8->setText(QString());
         label_6->setText(QCoreApplication::translate("viewMain", "\303\201rea del conocimiento:", nullptr));
         cb_ciencias->setText(QCoreApplication::translate("viewMain", "Ciencias", nullptr));
         cb_tecnologia->setText(QCoreApplication::translate("viewMain", "Tecnolog\303\255a", nullptr));
@@ -375,7 +380,6 @@ public:
         rb_editorial1->setText(QCoreApplication::translate("viewMain", "PEARSON", nullptr));
         rb_editorial2->setText(QCoreApplication::translate("viewMain", "MCGRILL", nullptr));
         rb_editorial3->setText(QCoreApplication::translate("viewMain", "Otro:", nullptr));
-        label_8->setText(QString());
     } // retranslateUi
 
 };
